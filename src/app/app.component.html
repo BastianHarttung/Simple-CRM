@@ -1,15 +1,17 @@
 <mat-drawer-container class="mat-drawer-container" autosize>
 
-  <mat-drawer #drawer class="sidenav" mode="side">
-    <p>Auto-resizing sidenav</p>
+  <mat-drawer #drawer class="sidenav" [opened]="true" mode="side">
+    <div class="logo-container">
+      <img class="logo" src="assets/favicons/favicon-96x96.png" alt="CRM-Logo">
+      <div class="logo-text">- Console</div>
+    </div>
+
+    <p>Dashboard</p>
   </mat-drawer>
 
   <div class="sidenav-content">
     <mat-toolbar color="primary">
       <mat-icon class="menu-btn" (click)="drawer.toggle()">menu</mat-icon>
-      <!--<button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button>-->
       <span>Simple CRM</span>
     </mat-toolbar>
   </div>
