@@ -46,3 +46,23 @@
     color: black;
   }
 }
+
+.menu-items {
+  font-size: 20px;
+  list-style: none;
+  li {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    &:hover{
+      color: var(--primary-color);
+    }
+  }
+  mat-icon {
+    margin-left: 10px;
+  }
+}
+
