@@ -50,6 +50,12 @@
 .menu-items {
   font-size: 20px;
   list-style: none;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
   li {
     display: flex;
     justify-content: flex-end;
@@ -57,12 +63,27 @@
     margin-right: 20px;
     margin-bottom: 15px;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
       color: var(--primary-color);
     }
   }
+
   mat-icon {
     margin-left: 10px;
   }
 }
+
+.active-route{
+  color: var(--primary-darker-color);
+}
+
+//----------------------MainPage---------------------
+.router-container {
+  min-height: 80vh;
+  position: relative;
+  margin: 25px 40px;
+}
+
+
 

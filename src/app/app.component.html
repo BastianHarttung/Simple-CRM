@@ -7,8 +7,15 @@
     </div>
 
     <ul class="menu-items">
-      <li>Dashboard<mat-icon>dashboard</mat-icon></li>
-      <li>User<mat-icon>person_outline</mat-icon></li>
+
+      <li routerLink='/dashboard'  routerLinkActive="active-route">Dashboard
+        <mat-icon>dashboard</mat-icon>
+      </li>
+
+      <li routerLink='/user'  routerLinkActive="active-route">User
+        <mat-icon>person_outline</mat-icon>
+      </li>
+
     </ul>
 
   </mat-drawer>
@@ -18,6 +25,10 @@
       <mat-icon class="menu-btn" (click)="drawer.toggle()">menu</mat-icon>
       <span>Simple CRM</span>
     </mat-toolbar>
+  </div>
+
+  <div class="router-container">
+    <router-outlet></router-outlet>
   </div>
 
 </mat-drawer-container>
