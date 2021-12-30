@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {DialogAddUserComponent} from "../dialogs/dialog-add-user/dialog-add-user.component";
+export interface DialogData {
+   userName: string;
+}
 
 @Component({
   selector: 'app-user',
@@ -7,9 +12,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  userName:string;
+
+  constructor(public dialog: MatDialog) {
+    this.userName = ''
+  }
 
   ngOnInit(): void {
+  }
+
+  openDialog() {
+    this.dialog.open(DialogAddUserComponent, {
+      width: '250px',
+      data: {userName: this.userName}
+    })
   }
 
 }
