@@ -23,7 +23,6 @@ export class UserComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(DialogAddUserComponent, {
-      width: '250px',
       data: {userName: this.userName}
     })
   }
