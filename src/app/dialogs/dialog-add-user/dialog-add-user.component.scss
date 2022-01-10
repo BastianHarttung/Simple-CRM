@@ -1,4 +1,15 @@
-hr{
-  border: 1px solid rgba(0, 160, 228, 0.4);
-  margin-top: -10px;
+.position-relative {
+  position: relative;
 }
+
+hr {
+  border: 2px solid #bce4f5;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.loading-bar {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
