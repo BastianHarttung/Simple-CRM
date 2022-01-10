@@ -5,16 +5,12 @@
       <th>Birthday</th>
       <th>E-Mail</th>
     </tr>
-    <tr>
-      <td>Bastian Harttung</td>
-      <td>23/05/1983</td>
-      <td>info@bastian-harttung.de</td>
+    <tr *ngFor="let user of allUsers">
+      <td>{{user['firstName']}} {{user['lastName']}}</td>
+      <td>{{user['birthDate']}}</td>
+      <td>{{user['email']}}</td>
     </tr>
-    <tr>
-      <td>Bastian Harttung</td>
-      <td>23/05/1983</td>
-      <td>info@hartt.de</td>
-    </tr>
+
   </table>
 </mat-card>
 
