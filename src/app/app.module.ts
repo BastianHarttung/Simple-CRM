@@ -26,9 +26,10 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 //Firebase
-import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+
 
 @NgModule({
   declarations: [
