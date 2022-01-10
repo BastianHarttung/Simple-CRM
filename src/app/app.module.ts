@@ -17,6 +17,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatCardModule} from "@angular/material/card";
 
 //Components
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -30,6 +31,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+
 
 
 @NgModule({
@@ -53,6 +55,7 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
     MatDatepickerModule,
     MatNativeDateModule,
     MatProgressBarModule,
+    MatCardModule,
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
