@@ -1,6 +1,5 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {DialogData} from "../../user/user.component";
+import {Component, OnInit} from '@angular/core';
+import {User} from "../../../models/user.class";
 
 
 @Component({
@@ -10,14 +9,19 @@ import {DialogData} from "../../user/user.component";
 })
 export class DialogAddUserComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+  user: User = new User();
+  birthDate:any;
+
+  constructor() {
   }
 
   ngOnInit(): void {
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
+
+  saveUser(){
+    this.user.birthDate = this.birthDate.getTime()
+    console.log('new user is:', this.user)
   }
+
 }
