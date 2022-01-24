@@ -1,0 +1,23 @@
+.user-detail-header {
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+
+  .profile-pic {
+    height: 110px;
+    width: 110px;
+    object-fit: cover;
+    object-position: 80% 20%;
+    border-radius: 10px;
+  }
+
+  .user-infos {
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 32px;
+  }
+
+}
