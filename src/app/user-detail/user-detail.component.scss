@@ -24,4 +24,16 @@
 
 .address-card {
   border-radius: 0 0 10px 10px;
+
+  .edit-icon-btn {
+    position: absolute;
+    right: 11px;
+    top: 11px;
+    cursor: pointer;
+    transition: color 180ms ease-in-out;
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
 }
