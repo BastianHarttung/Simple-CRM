@@ -24,6 +24,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { DialogAddUserComponent } from './dialogs/dialog-add-user/dialog-add-user.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { DialogEditAddressComponent } from './dialogs/dialog-edit-address/dialog-edit-address.component';
+import { DialogEditUserDetailsComponent } from './dialogs/dialog-edit-user-details/dialog-edit-user-details.component';
 
 //Firebase
 import { environment } from '../environments/environment';
@@ -32,9 +35,6 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { UserDetailComponent } from './user-detail/user-detail.component';
-import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
-import { DialogEditUserDetailsComponent } from './dialog-edit-user-details/dialog-edit-user-details.component';
 
 
 @NgModule({

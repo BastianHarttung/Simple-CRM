@@ -3,8 +3,8 @@ import {ActivatedRoute} from "@angular/router";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {User} from "../../models/user.class";
 import {MatDialog} from "@angular/material/dialog";
-import {DialogEditAddressComponent} from "../dialog-edit-address/dialog-edit-address.component";
-import {DialogEditUserDetailsComponent} from "../dialog-edit-user-details/dialog-edit-user-details.component";
+import {DialogEditAddressComponent} from "../dialogs/dialog-edit-address/dialog-edit-address.component";
+import {DialogEditUserDetailsComponent} from "../dialogs/dialog-edit-user-details/dialog-edit-user-details.component";
 
 @Component({
   selector: 'app-user-detail',
@@ -39,11 +39,12 @@ export class UserDetailComponent implements OnInit {
       })
   }
 
-  editAddress(){
-    this.dialog.open(DialogEditAddressComponent);
+  editAddress() {
+    const dialog = this.dialog.open(DialogEditAddressComponent);
+    dialog.componentInstance.user = this.user;
   }
 
-  editNameEmail(){
+  editNameEmail() {
     this.dialog.open(DialogEditUserDetailsComponent);
   }
 
