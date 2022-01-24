@@ -4,11 +4,6 @@
 
   <div mat-dialog-content>
 
-    <!--<hr *ngIf="!loading">
-    <mat-progress-bar *ngIf="loading"
-                      class="loading-bar"
-                      mode="indeterminate"></mat-progress-bar>
--->
     <div>
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Address</mat-label>
@@ -38,6 +33,11 @@
     </div>
 
   </div>
+
+  <hr *ngIf="!loading">
+  <mat-progress-bar *ngIf="loading"
+                    class="loading-bar"
+                    mode="indeterminate"></mat-progress-bar>
 
   <div mat-dialog-actions>
     <button mat-button

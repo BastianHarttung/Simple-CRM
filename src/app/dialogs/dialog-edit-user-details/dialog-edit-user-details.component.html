@@ -35,6 +35,11 @@
 
   </div>
 
+  <hr *ngIf="!loading">
+  <mat-progress-bar *ngIf="loading"
+                    class="loading-bar"
+                    mode="indeterminate"></mat-progress-bar>
+
   <div mat-dialog-actions>
     <button mat-button
             (click)="closeDialog()"
