@@ -7,6 +7,19 @@
     {{user.email}}
   </div>
 
+  <button mat-icon-button
+          class="more-icon-btn icon-btn"
+          [matMenuTriggerFor]="headerMenu">
+    <mat-icon>more_horiz</mat-icon>
+  </button>
+  <mat-menu #headerMenu="matMenu">
+    <button mat-menu-item
+            (click)="editNameEmail()">
+      <mat-icon>edit</mat-icon>
+      <span>Edit</span>
+    </button>
+  </mat-menu>
+
 </mat-card>
 
 <mat-card class="address-card">
@@ -19,11 +32,16 @@
   </mat-card-content>
 
   <button mat-icon-button
-          class="edit-icon-btn"
-          (click)="editAddress()">
-    <mat-icon class="edit-icon"
-    >edit
-    </mat-icon>
+          class="more-icon-btn icon-btn"
+          [matMenuTriggerFor]="addressMenu">
+    <mat-icon>more_horiz</mat-icon>
   </button>
+  <mat-menu #addressMenu="matMenu">
+    <button mat-menu-item
+            (click)="editAddress()">
+      <mat-icon>edit</mat-icon>
+      <span>Edit</span>
+    </button>
+  </mat-menu>
 
 </mat-card>

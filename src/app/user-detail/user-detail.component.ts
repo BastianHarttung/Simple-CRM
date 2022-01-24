@@ -36,7 +36,11 @@ export class UserDetailComponent implements OnInit {
   }
 
   editAddress(){
-    console.log('edit')
+    console.log('edit address')
+  }
+
+  editNameEmail(){
+    console.log('edit name')
   }
 
 }

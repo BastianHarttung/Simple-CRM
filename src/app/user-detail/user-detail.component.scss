@@ -20,16 +20,27 @@
     justify-content: center;
     margin-left: 32px;
   }
+
+  .more-icon-btn {
+    position: absolute;
+    right: 11px;
+    bottom: 11px;
+    cursor: pointer;
+  }
+
 }
 
 .address-card {
   border-radius: 0 0 10px 10px;
 
-  .edit-icon-btn {
+  .more-icon-btn {
     position: absolute;
     right: 11px;
     top: 11px;
     cursor: pointer;
+  }
+
+  .icon-btn {
     transition: color 180ms ease-in-out;
 
     &:hover {
