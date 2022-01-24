@@ -5,9 +5,9 @@
       <th>Birthday</th>
       <th>E-Mail</th>
     </tr>
-    <tr *ngFor="let user of allUsers">
+    <tr *ngFor="let user of allUsers" [routerLink]="['/user/' + user['userId']]">
       <td>{{user['firstName']}} {{user['lastName']}}</td>
-      <td>{{user['birthDate']}}</td>
+      <td>{{generateBirthDate(user['birthDate'])}}</td>
       <td>{{user['email']}}</td>
     </tr>
 

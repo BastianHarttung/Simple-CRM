@@ -23,15 +23,14 @@ import {MatCardModule} from "@angular/material/card";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { DialogAddUserComponent } from './dialogs/dialog-add-user/dialog-add-user.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 //Firebase
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
-
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 
 @NgModule({

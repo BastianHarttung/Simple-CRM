@@ -23,8 +23,8 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.firestore
       .collection('users')
-      .valueChanges()
-      .subscribe((changes:any) =>{
+      .valueChanges({idField: 'userId'})
+      .subscribe((changes: any) => {
         this.allUsers = changes;
         console.log('received changes from DB', changes);
       })
@@ -34,6 +34,10 @@ export class UserComponent implements OnInit {
     this.dialog.open(DialogAddUserComponent, {
       data: {userName: this.user}
     })
+  }
+
+  generateBirthDate(birthdayInMs: string) {
+    return new Date(birthdayInMs).toLocaleDateString()
   }
 
 }
