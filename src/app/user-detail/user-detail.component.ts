@@ -42,11 +42,13 @@ export class UserDetailComponent implements OnInit {
   editAddress() {
     const dialog = this.dialog.open(DialogEditAddressComponent);
     dialog.componentInstance.user = new User(this.user.toJson());
+    dialog.componentInstance.userId = this.userId;
   }
 
   editNameEmail() {
     const dialog = this.dialog.open(DialogEditUserDetailsComponent);
     dialog.componentInstance.user = new User(this.user.toJson());
+    dialog.componentInstance.userId = this.userId;
   }
 
 }

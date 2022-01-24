@@ -11,6 +11,7 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 export class DialogEditAddressComponent implements OnInit {
 
   user: User = new User();
+  userId: string = '';
   loading = false;
 
   constructor(public dialogRef: MatDialogRef<DialogEditAddressComponent>,
@@ -26,17 +27,15 @@ export class DialogEditAddressComponent implements OnInit {
 
   saveUser() {
     this.loading = true;
-    /*
     this.firestore
       .collection('users')
-      .add(this.user.toJson())
+      .doc(this.userId)
+      .update(this.user.toJson())
       .then((result: any) => {
-        console.log('Save User to Firestore finished', result)
-        setTimeout(() => {
-          this.dialogRef.close();
-          this.loading = false
-        }, 1000)
-      })*/
+        console.log('Update User to Firestore finished', result)
+        this.dialogRef.close();
+        this.loading = false
+      })
   }
 
 }
