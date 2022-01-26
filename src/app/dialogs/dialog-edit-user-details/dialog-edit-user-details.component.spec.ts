@@ -3,7 +3,9 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {DialogEditUserDetailsComponent} from './dialog-edit-user-details.component';
 import {RouterModule} from "@angular/router";
 import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../../../environments/environment";
 
 describe('DialogEditUserDetailsComponent', () => {
   let component: DialogEditUserDetailsComponent;
@@ -11,9 +13,17 @@ describe('DialogEditUserDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterModule.forRoot([]), MatDialogModule, AngularFirestore],
+      imports: [
+        RouterModule.forRoot([]),
+        MatDialogModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule
+      ],
       declarations: [DialogEditUserDetailsComponent],
-      providers:[MatDialogRef]
+      providers: [{
+        provide: MatDialogRef,
+        useValue: []
+      }]
     })
       .compileComponents();
   });

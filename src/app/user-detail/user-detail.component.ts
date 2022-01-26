@@ -22,6 +22,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('params',this.route)
     this.route.paramMap.subscribe(paramMap => {
       this.userId = paramMap.get('id')
       this.loadUserDataFromFirebase()
@@ -29,14 +30,16 @@ export class UserDetailComponent implements OnInit {
   }
 
   loadUserDataFromFirebase(): void {
-    this.firestore
-      .collection('users')
-      .doc(this.userId)
-      .valueChanges()
-      .subscribe((user: any) => {
-        this.user = new User(user);
-        console.log('get user', user)
-      })
+    if (this.userId) {
+      this.firestore
+        .collection('users')
+        .doc(this.userId)
+        .valueChanges()
+        .subscribe((user: any) => {
+          this.user = new User(user);
+          console.log('get user', user)
+        })
+    }
   }
 
   editAddress() {

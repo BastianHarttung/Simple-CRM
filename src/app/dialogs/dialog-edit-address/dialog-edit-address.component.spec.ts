@@ -1,20 +1,42 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DialogEditAddressComponent } from './dialog-edit-address.component';
+import {DialogEditAddressComponent} from './dialog-edit-address.component';
 import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../../../environments/environment";
+import {ActivatedRoute} from "@angular/router";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('DialogEditAddressComponent', () => {
   let component: DialogEditAddressComponent;
   let fixture: ComponentFixture<DialogEditAddressComponent>;
 
+  const fakeActivatedRoute = {
+    snapshot: {data: {}}
+  } as ActivatedRoute;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[MatDialogModule,AngularFirestore],
-      declarations: [ DialogEditAddressComponent ],
-      providers:[MatDialogRef]
+      imports: [
+        MatDialogModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        RouterTestingModule
+      ],
+      declarations: [DialogEditAddressComponent],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: []
+        },
+        {
+          provide: ActivatedRoute,
+          useValue: fakeActivatedRoute
+        }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

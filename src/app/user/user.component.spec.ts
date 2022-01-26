@@ -1,8 +1,10 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { UserComponent } from './user.component';
+import {UserComponent} from './user.component';
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../../environments/environment";
 
 describe('UserComponent', () => {
   let component: UserComponent;
@@ -10,11 +12,15 @@ describe('UserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[MatDialogModule,AngularFirestore],
-      declarations: [ UserComponent ],
-      providers:[MatDialog,AngularFirestore]
+      imports: [
+        MatDialogModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule
+      ],
+      declarations: [UserComponent],
+      providers: [MatDialog]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
